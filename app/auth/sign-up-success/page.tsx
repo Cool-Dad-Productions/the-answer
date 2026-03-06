@@ -34,21 +34,18 @@ export default function SignUpSuccessPage() {
 
           <Card>
             <CardHeader>
-              <CardTitle className="text-2xl">
-                Thank you for signing up!
-              </CardTitle>
-              <CardDescription>Check your email to confirm</CardDescription>
+              <CardTitle className="text-2xl">Account created!</CardTitle>
+              <CardDescription>You can now log in</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-sm text-muted-foreground">
-                You&apos;ve successfully signed up. Please check your email to
-                confirm your account before signing in.
+                Your account has been successfully created.
               </p>
-              <Link 
-                href="/auth/login" 
+              <Link
+                href="/auth/login"
                 className="block text-center text-sm text-[#17408B] hover:text-[#17408B]/80 underline underline-offset-4"
               >
-                Back to login
+                Go to login
               </Link>
             </CardContent>
           </Card>

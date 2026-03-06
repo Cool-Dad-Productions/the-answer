@@ -1,7 +1,6 @@
 "use client"
 
-import { createClient } from "@/lib/supabase/client"
-import { useRouter } from "next/navigation"
+import { signOut } from 'next-auth/react'
 import { LogOut } from "lucide-react"
 
 export type League = "NBA" | "WNBA"
@@ -13,12 +12,8 @@ interface NavbarProps {
 }
 
 export function Navbar({ league, setLeague, onLogoClick }: NavbarProps) {
-  const router = useRouter()
-
-  const handleLogout = async () => {
-    const supabase = createClient()
-    await supabase.auth.signOut()
-    router.push("/auth/login")
+  const handleLogout = () => {
+    signOut({ callbackUrl: '/auth/login' })
   }
 
   return (
